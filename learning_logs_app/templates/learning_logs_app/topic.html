@@ -1,0 +1,35 @@
+{% extends 'learning_logs_app/base.html' %}
+
+{% block content %}
+
+<p><strong>Topic:</strong> {{ topic.text }}</p>
+
+<!-- ✅ Add Entry button (correct position) -->
+<p>
+  <a href="{% url 'learning_logs_app:new_entry' topic.id %}">
+    ➕ Add a new entry
+  </a>
+</p>
+
+<p><strong>Entries:</strong></p>
+
+<ul>
+  {% for entry in entries %}
+    <li>
+      <p>
+        {{ entry.date_added|date:'M d, Y H:i' }} -
+        {{ entry.text|linebreaks }}
+      </p>
+
+      <p>
+        <a href="{% url 'learning_logs_app:edit_entry' entry.id %}">
+          ✏️ Edit entry
+        </a>
+      </p>
+    </li>
+  {% empty %}
+    <li>No entries yet.</li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'learning_logs_app/base.html' %}
+
+{% block content %}
+  <h2>Edit entry</h2>
+  <p>Topic: {{ topic }}</p>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save changes</button>
+  </form>
+{% endblock %}
