@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+env/
+venv/
+blog_env/
+meal_env/
+lg_env
+
+# Django
+*.log
+db.sqlite3
+media/
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Static files (optional if generated)
+staticfiles/
+
+# Migrations (optional – careful)
+# */migrations/*
+# !*/migrations/__init__.py
